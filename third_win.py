@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import (
         QGroupBox, QRadioButton,
         QPushButton, QLabel, QListWidget, QLineEdit)
         
-from instr import *
+from txt import *
 
 class FinalWin(QWidget):
     def __init__(self):
@@ -36,3 +36,7 @@ class FinalWin(QWidget):
         self.setWindowTitle(txt_finalwin)
         self.resize(win_width, win_height)
         self.move(win_x, win_y)
+#
+#app = QApplication([])
+#mw = FinalWin()
+#app.exec_()
