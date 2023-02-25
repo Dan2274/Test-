@@ -10,13 +10,13 @@ from PyQt5.QtWidgets import (
 from txt import *
 from third_win import *
 
-#class Experiment():
-#    def __init__(self, age, test1, test2, test3):
-#        self.age = age
-#        self.t1 = test1
-#        self.t2 = test2
-#        self.t3 = test3
-#
+class Experiment():
+    def __init__(self, a, b, c, d):
+        self.a = a
+        self.b = b
+        self.c = c
+        self.d = d
+
 class second_win(QWidget):
     def __init__(self):
         ''' окно, в котором проводится опрос '''
@@ -38,7 +38,7 @@ class second_win(QWidget):
     
     def next_click(self):
         self.hide()
-#        self.exp = Experiment(int(self.line_age.text()), self.line_test1.text(), self.line_test2.text(), self.line_test3.text())
+        self.exp = Experiment(self.a.text(), self.b.text(), self.c.text(), self.d.text())
         self.fw = FinalWin()
 
     def connects(self):
@@ -90,6 +90,10 @@ class second_win(QWidget):
         self.rad_gr_4.addButton(self.rad_4_1, id = 1)
         self.rad_gr_4.addButton(self.rad_4_2, id = 2)
         self.rad_gr_4.addButton(self.rad_4_3, id = 3)
+        self.a = rad_gr_1.checkedId()
+        self.b = rad_gr_2.checkedId()
+        self.c = rad_gr_3.checkedId()
+        self.d = rad_gr_4.checkedId()
 
 #        self.text_name = QLabel(txt_name)
 #        self.text_age = QLabel(txt_age)
