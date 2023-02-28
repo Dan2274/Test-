@@ -11,11 +11,15 @@ from txt import *
 from third_win import *
 
 class Experiment():
-    def __init__(self, a, b, c, d):
+    def __init__(self, a, b, c, d,e,g,h,y):
         self.a = a
         self.b = b
         self.c = c
         self.d = d
+        self.e = e
+        self.g = g
+        self.h = h
+        self.y = y
 
 class second_win(QWidget):
     def __init__(self):
@@ -38,7 +42,7 @@ class second_win(QWidget):
     
     def next_click(self):
         self.hide()
-        self.exp = Experiment(self.a.text(), self.b.text(), self.c.text(), self.d.text())
+        self.exp = Experiment(self.a, self.b, self.c, self.d,self.e, self.g, self.h, self.y)
         self.fw = FinalWin()
 
     def connects(self):
@@ -90,10 +94,50 @@ class second_win(QWidget):
         self.rad_gr_4.addButton(self.rad_4_1, id = 1)
         self.rad_gr_4.addButton(self.rad_4_2, id = 2)
         self.rad_gr_4.addButton(self.rad_4_3, id = 3)
-        self.a = rad_gr_1.checkedId()
-        self.b = rad_gr_2.checkedId()
-        self.c = rad_gr_3.checkedId()
-        self.d = rad_gr_4.checkedId()
+        self.question5 = QLabel(question5)
+        self.rad_5_1 = QRadioButton(txt_5_1)
+        self.rad_5_1.setChecked(True)
+        self.rad_5_2 = QRadioButton(txt_5_2)
+        self.rad_5_3 = QRadioButton(txt_5_3)
+        self.rad_gr_5 = QButtonGroup()
+        self.rad_gr_5.addButton(self.rad_5_1, id = 1)
+        self.rad_gr_5.addButton(self.rad_5_2, id = 2)
+        self.rad_gr_5.addButton(self.rad_5_3, id = 3)
+        self.question6 = QLabel(question6)
+        self.rad_6_1 = QRadioButton(txt_6_1)
+        self.rad_6_1.setChecked(True)
+        self.rad_6_2 = QRadioButton(txt_6_2)
+        self.rad_6_3 = QRadioButton(txt_6_3)
+        self.rad_gr_6 = QButtonGroup()
+        self.rad_gr_6.addButton(self.rad_6_1, id = 1)
+        self.rad_gr_6.addButton(self.rad_6_2, id = 2)
+        self.rad_gr_6.addButton(self.rad_6_3, id = 3)
+        self.question7 = QLabel(question7)
+        self.rad_7_1 = QRadioButton(txt_7_1)
+        self.rad_7_1.setChecked(True)
+        self.rad_7_2 = QRadioButton(txt_7_2)
+        self.rad_7_3 = QRadioButton(txt_7_3)
+        self.rad_gr_7 = QButtonGroup()
+        self.rad_gr_7.addButton(self.rad_7_1, id = 1)
+        self.rad_gr_7.addButton(self.rad_7_2, id = 2)
+        self.rad_gr_7.addButton(self.rad_7_3, id = 3)
+        self.question8 = QLabel(question8)
+        self.rad_8_1 = QRadioButton(txt_8_1)
+        self.rad_8_1.setChecked(True)
+        self.rad_8_2 = QRadioButton(txt_8_2)
+        self.rad_8_3 = QRadioButton(txt_8_3)
+        self.rad_gr_8 = QButtonGroup()
+        self.rad_gr_8.addButton(self.rad_8_1, id = 1)
+        self.rad_gr_8.addButton(self.rad_8_2, id = 2)
+        self.rad_gr_8.addButton(self.rad_8_3, id = 3)
+        self.a = self.rad_gr_1.checkedId()
+        self.b = self.rad_gr_2.checkedId()
+        self.c = self.rad_gr_3.checkedId()
+        self.d = self.rad_gr_4.checkedId()
+        self.e = self.rad_gr_5.checkedId()
+        self.g = self.rad_gr_6.checkedId()
+        self.h = self.rad_gr_7.checkedId()
+        self.y = self.rad_gr_8.checkedId()
 
 #        self.text_name = QLabel(txt_name)
 #        self.text_age = QLabel(txt_age)
@@ -131,6 +175,22 @@ class second_win(QWidget):
         self.l_line.addWidget(self.rad_4_1, alignment = Qt.AlignLeft)
         self.l_line.addWidget(self.rad_4_2, alignment = Qt.AlignLeft)
         self.l_line.addWidget(self.rad_4_3, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.question5, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.rad_5_1, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.rad_5_2, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.rad_5_3, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.question6, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.rad_6_1, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.rad_6_2, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.rad_6_3, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.question7, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.rad_7_1, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.rad_7_2, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.rad_7_3, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.question8, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.rad_8_1, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.rad_8_2, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.rad_8_3, alignment = Qt.AlignLeft)
 #        self.r_line.addWidget(self.text_timer, alignment = Qt.AlignCenter)
 #        self.l_line.addWidget(self.text_name, alignment = Qt.AlignLeft)
 #        self.l_line.addWidget(self.line_name, alignment = Qt.AlignLeft) 
@@ -150,3 +210,4 @@ class second_win(QWidget):
         self.h_line.addLayout(self.l_line)  
         self.h_line.addLayout(self.r_line)        
         self.setLayout(self.h_line)
+ 
